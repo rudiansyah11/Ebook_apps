@@ -1,0 +1,125 @@
+PROJECT TEMPLATE / SAMPLE APPS:
+
+Sample app ini hanya sampai authententication, 
+Sumber =  Laravel 8 dan 9 Auth:
+https://docs.google.com/document/d/11wVyhQEv5eRUABhpR5yBNO4kICQ2_7tz/edit
+https://techvblogs.com/blog/laravel-9-authentication-tutorial
+https://www.youtube.com/watch?v=FvHHX0Jv45s
+
+https://medium.com/@azizannurrohman/mastering-user-authentication-in-laravel-11-a-comprehensive-guide-394c0511120b
+
+1. install laravelnya : https://laravel.com/docs/9.x
+    # composer create-project laravel/laravel:^9.0 project_sample
+
+2. buka aplikasinya via gitbash "code ." , lalu  buka file .env untuk konfigurasi databasenya, (disini databasenya masih menggunakan database project_bus_travel, silahkan ganti dan jalankan "php artisan migrate")
+
+3. sekarang kita buat login, register, menu, profile dan dashboard. disini kita membuat login secara manual.
+
+4. jika proses authentikasi sudah selsai maka kita download/ install semua library nya : 
+ - maatwebsit (export EXCEL/CSV) : (blm di publish, perlu jalankan perintah composer publish)
+    # composer require maatwebsite/excel
+
+ - DOMPDF: (blm di publish, perlu jalankan perintah composer publish)
+    # composer require barryvdh/laravel-dompdf
+
+ - MIDTRANS (Payment gateway) :https://docs.midtrans.com/docs/snap-snap-integration-guide
+    # composer require midtrans/midtrans-php
+
+5. jika sudah maka kita konfirasi semuanya (token, client_key, server_key,dll, termasuk token mapbox) didalam folder config/nama_file.php
+
+6. custome semua tampilannya,
+7. Feature yg sudah ada / default: 
+    # profile : - ganti data
+                - ganti photo profile, dll
+    # CRUD data refer
+    # notification & log activity
+
+
+DI SINI BLM ADA DATATABLE NYA,
+KITA PERLU INSTALL DATATABLE, YG MANA KITA AKAN MENGGUNAKAN YAJRA DATATABLE:
+
+# composer require yajra/laravel-datatables-oracle
+
+# php artisan vendor:publish --provider="Yajra\DataTables\DataTablesServiceProvider"
+
+Configure DataTables Service Provider:
+Pastikan Anda menambahkan DataTablesServiceProvider ke file config/app.php jika Laravel versi 5.4 atau lebih rendah. Untuk Laravel versi 5.5 ke atas, service provider akan didaftarkan secara otomatis melalui auto-discovery.
+
+'providers' => [
+    ...
+    Yajra\DataTables\DataTablesServiceProvider::class,
+],
+
+jika sudah maka kita perlu pastikan bahwa kita sudah memakainya di controllernya.
+==========================================
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
+==========================================
+ 
+untuk login:
+port8000@mail.com
+1234567890
+
+tamplate:
+file:///C:/xampp/htdocs/kerjaan/project/refastindo(template)/template_default/icons_icomoon.html
+==========================================================================
+
+https://stackoverflow.com/questions/23137012/535-5-7-8-username-and-password-not-accepted/33932499#33932499
+
+
+passing_id_user 
+full_name   
+email   
+password    
+no_phone    
+address 
+email_verified_at   
+expired_at  
+
+created_at  
+updated_at
+
+==========================================================================
+USING NGROK:
+buka file ngrok.exe di file htdocs:
+
+lalu jalan commend: (sampai muncul: authtoken saved to configure)
+ngrok config add-authtoken 2iMEx4YPa1zH3WZ9apN6tRfog6o_67zeQvMikt5cPiKHXQtjP
+
+jalan aplikasi laravelnya, dengan membuka terminal/cmd baru:
+php artisan serve
+
+kembali ke jendela termina/cmd dari ngerok.exe, lalu ketikan:
+C:\your_path\ngrok.exe http 8000
+
+
+https://217f-2001-448a-2082-e345-31ce-7cf8-faf7-2246.ngrok-free.app
+==========================================================================
+
+akun untuk login:
+port8000@mail.com
+1234567890
+
+
+
+
+- kalau yg login adalah admin maka diarahin ke dashboard langsung
+- kalau yg login user biasa diarahin ke menu download langsung
+
+C:\xampp\htdocs\kerjaan\ansyah_solution\ebook\DOCUMENT_READ_THIS.txt
+
+
+git add README.md
+
+git init
+git add .
+git commit -m "up ke git"
+git branch -M main
+git remote add origin https://github.com/rudiansyah11/Ebook_apps.git
+git push -u origin main
+
+
+
+
